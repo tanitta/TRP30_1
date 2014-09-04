@@ -1,0 +1,116 @@
+// [RCD] 
+Val
+{
+}
+Key
+{
+}
+Body
+{
+	Core() {
+		S:Weight(angle=150) {
+			S:Weight(angle=120) {
+				E:Weight(angle=90) { }
+				W:Weight(angle=90) { }
+				S:Weight(angle=90) { }
+				N:Weight(angle=90) {
+					N:Weight(angle=90) { }
+				}
+			}
+		}
+		S:Weight(angle=90) {
+			S:Weight(angle=90) {
+				W:Weight(angle=10) {
+					N:Weight(angle=-90) {
+						N:Weight(angle=-80) {
+							N:Weight(angle=160) {
+								N:Weight(angle=-80) {
+									N:Frame(angle=135) { }
+								}
+							}
+						}
+						S:Weight(angle=-80) {
+							S:Weight(angle=-90) {
+								S:Weight() { }
+								W:Weight(angle=-90) {
+									S:Weight() { }
+								}
+								E:Weight(angle=-90) {
+									S:Weight() { }
+								}
+							}
+						}
+						W:Trim(angle=90) {
+							W:Weight(angle=-90) { }
+							W:Weight(angle=90) { }
+						}
+						N:Weight(angle=120) {
+							W:Weight(angle=-90) {
+								W:Weight(angle=-90) { }
+							}
+							E:Weight(angle=-90) { }
+							N:Weight(angle=-90) { }
+							S:Weight(angle=-90) { }
+						}
+					}
+				}
+				E:Weight(angle=10) {
+					N:Weight(angle=-90) {
+						S:Weight(angle=-80) {
+							S:Weight(angle=-90) {
+								S:Weight() { }
+								W:Weight(angle=-90) {
+									S:Weight() { }
+								}
+								E:Weight(angle=-90) {
+									S:Weight() { }
+								}
+							}
+						}
+						N:Weight(angle=-80) {
+							N:Weight(angle=160) {
+								N:Weight(angle=-80) {
+									N:Frame(angle=135) { }
+								}
+							}
+						}
+						E:Trim(angle=90) {
+							E:Weight(angle=90) { }
+							E:Weight(angle=-90) { }
+						}
+						N:Weight(angle=120) {
+							W:Weight(angle=-90) {
+								W:Weight(angle=-90) { }
+							}
+							E:Weight(angle=-90) { }
+							N:Weight(angle=-90) { }
+							S:Weight(angle=-90) { }
+						}
+					}
+				}
+			}
+		}
+		W:Weight() {
+			S:Weight(angle=-60) {
+				E:Weight(angle=90) { }
+				W:Weight(angle=90) {
+					W:Weight(angle=90) { }
+				}
+				S:Weight(angle=90) { }
+				N:Weight(angle=90) { }
+			}
+			S:Weight(angle=80) { }
+		}
+		E:Weight() {
+			S:Weight(angle=-60) {
+				E:Weight(angle=90) { }
+				W:Weight(angle=90) {
+					W:Weight(angle=90) { }
+				}
+				S:Weight(angle=90) { }
+				N:Weight(angle=90) { }
+			}
+			S:Weight(angle=80) { }
+		}
+	}
+}
