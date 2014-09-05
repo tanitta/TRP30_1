@@ -1,6 +1,22 @@
 // [RCD] 
 Val
 {
+	_C_ARMOR_1(default=0, disp=0)
+	_C_ARMOR_1_C(default=0, disp=0)
+	_C_ARMOR_2(default=0, disp=0)
+	_C_ARMOR_2_C(default=0, disp=0)
+	_P_JET_LL_0(default=0, min=-1000000, disp=0)
+	_P_JET_LL_1(default=0, min=-1000000, disp=0)
+	_P_JET_LL_2(default=0, min=-1000000, disp=0)
+	_P_JET_LR_0(default=0, min=-1000000, disp=0)
+	_P_JET_LR_1(default=0, min=-1000000, disp=0)
+	_P_JET_LR_2(default=0, min=-1000000, disp=0)
+	_P_JET_SL_0(default=0, min=-1000000, disp=0)
+	_P_JET_SL_1(default=0, min=-1000000, disp=0)
+	_P_JET_SL_2(default=0, min=-1000000, disp=0)
+	_P_JET_SR_0(default=0, min=-1000000, disp=0)
+	_P_JET_SR_1(default=0, min=-1000000, disp=0)
+	_P_JET_SR_2(default=0, min=-1000000, disp=0)
 }
 Key
 {
@@ -41,8 +57,16 @@ Body
 							}
 						}
 						W:Trim(angle=90) {
-							W:Weight(angle=-90) { }
-							W:Weight(angle=90) { }
+							W:Weight(angle=-90) {
+								N:Weight() {
+									E:Cowl(option=3, color=#808080) { }
+								}
+							}
+							W:Weight(angle=90) {
+								S:Weight() {
+									E:Cowl(option=4, color=#808080) { }
+								}
+							}
 						}
 						N:Weight(angle=120) {
 							W:Weight(angle=-90) {
@@ -75,8 +99,16 @@ Body
 							}
 						}
 						E:Trim(angle=90) {
-							E:Weight(angle=90) { }
-							E:Weight(angle=-90) { }
+							E:Weight(angle=90) {
+								S:Weight() {
+									W:Cowl(option=3, color=#808080) { }
+								}
+							}
+							E:Weight(angle=-90) {
+								N:Weight() {
+									W:Cowl(option=4, color=#808080) { }
+								}
+							}
 						}
 						N:Weight(angle=120) {
 							W:Weight(angle=-90) {
@@ -113,4 +145,32 @@ Body
 			S:Weight(angle=80) { }
 		}
 	}
+}
+Lua
+{spirytus = {};
+	open_spirytus = loadlib("./Spirytus.DLL", "rc_OpenSpirytus");
+	open_spirytus();
+loadlib("NATSound.dll", "Load")();
+require("ttata/color.lua")
+require("hikeo/2Dlinelib.lua")
+require("cel/Science/BasePhysic.lua")
+require("hikeo/stdlib.lua")
+require "Boot" {
+	"cel/Equa",
+	"ttata/FileIO",
+	"ttata/VModeler",
+	"ttata/Graphics",
+	"ttata/Input",
+	"ttata/trit_Component",
+	"ttata/Commander",
+	"ttata/Spine",
+	"ttata/Model/TRP30_1",
+	"ttata/Math/linear_algebra"
+}
+require("ttata/Material.lua")
+require("ttata/Vector.lua")
+
+function OnFrame()
+	CallSpine(trit.model.trp30_1.Core)
+end
 }

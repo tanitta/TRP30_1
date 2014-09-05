@@ -1,4 +1,5 @@
 return{
 	name = "TRP30_1";
-	{Core.lua};
+	{"Core.lua"};
+	{"funnel_jet.lua"};
 }
